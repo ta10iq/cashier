@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: cashier
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: CASHIER_DB_PATH
+        value: /tmp/cashier.sqlite3
